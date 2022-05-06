@@ -8,11 +8,10 @@ This repository contains most of the laboratory work of the specialty Computing 
 <details>
 <summary>📘 Semester 6</summary>
 
-- [✅**Администрирование компьютерных систем и сетей**](https://github.com/steppbol/bsuir-csn-cmsn-helper/tree/master/data/semester-6/administration-of-computer-systems-and-networks) 
-- [✅**Цифровая обработка сигналов и изображений**](https://github.com/steppbol/bsuir-csn-cmsn-helper/tree/master/data/semester-6/digital-signal-and-image-processing) 
-- [✅**Архитектура высокопроизводительных процессоров**](https://github.com/steppbol/bsuir-csn-cmsn-helper/tree/master/data/semester-6/high-performance-processors-architecture) 
-- [✅**Технологии разработки и тестирования программного обеспечения**](https://github.com/steppbol/bsuir-csn-cmsn-helper/tree/master/data/semester-6/software-development-and-testing-technologies/lab-work) 
-- [✅**Системный анализ**](https://github.com/steppbol/bsuir-csn-cmsn-helper/tree/master/data/semester-6/system-analysis) 
+- [✅**Администрирование компьютерных систем и сетей**](https://github.com/DmitriyDovgolyonok/6-term/tree/main/AKSIS) 
+- [✅**Цифровая обработка сигналов и изображений**](https://github.com/DmitriyDovgolyonok/6-term/tree/main/COSII) 
+- [✅**Архитектура высокопроизводительных процессоров**](https://github.com/DmitriyDovgolyonok/6-term/tree/main/AVP) 
+- [✅**Системный анализ**](https://github.com/DmitriyDovgolyonok/6-term/tree/main/SA) 
 
 
 </details>
