@@ -1,0 +1,210 @@
+autostart = False
+version = 0.8.7
+[127.0.0.1:7202]
+    workingdir = C:\Users\stari\AppData\Local\Temp
+    udp = 10201
+    [[1760]]
+        image = C:\Users\stari\Downloads\c1700-sy-mz.122-15.T17.image
+        ram = 256
+        ghostios = True
+        chassis = 1760
+    [[ROUTER R5]]
+        model = 1760
+        console = 2105
+        aux = 2505
+        wic0/0 = WIC-1ENET
+        wic0/1 = WIC-1ENET
+        e0/0 = R1 e0/0
+        f0/0 = R3 f0/0
+        cnfg = configs\R5.recovered.cfg
+        x = -421.0
+        y = 2.0
+        z = 1.0
+    [[ROUTER R6]]
+        model = 1760
+        console = 2106
+        aux = 2506
+        wic0/0 = WIC-1ENET
+        wic0/1 = WIC-1ENET
+        e0/0 = R2 e0/0
+        e0/1 = R1 e0/1
+        f0/0 = R8 f0/0
+        cnfg = configs\R6.recovered.cfg
+        x = -69.0
+        y = -125.0
+        z = 1.0
+        hx = 17.5
+        hy = -23.0
+[127.0.0.1:7203]
+    workingdir = C:\Users\stari\AppData\Local\Temp
+    udp = 10301
+    [[1760]]
+        image = C:\Users\stari\Downloads\c1700-sy-mz.122-15.T17.image
+        ram = 256
+        ghostios = True
+        chassis = 1760
+    [[ROUTER R7]]
+        model = 1760
+        console = 2107
+        aux = 2507
+        f0/0 = R1 f0/0
+        cnfg = configs\R7.recovered.cfg
+        x = -106.0
+        y = 219.0
+        z = 1.0
+    [[ROUTER R8]]
+        model = 1760
+        console = 2108
+        aux = 2508
+        f0/0 = R6 f0/0
+        cnfg = configs\R8.recovered.cfg
+        x = 178.0
+        y = -132.0
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = C:\Users\stari\AppData\Local\Temp
+    udp = 10001
+    [[1760]]
+        image = C:\Users\stari\Downloads\c1700-sy-mz.122-15.T17.image
+        ram = 256
+        ghostios = True
+        chassis = 1760
+    [[ROUTER R1]]
+        model = 1760
+        console = 2101
+        aux = 2501
+        wic0/0 = WIC-1ENET
+        wic0/1 = WIC-1ENET
+        e0/0 = R5 e0/0
+        e0/1 = R6 e0/1
+        f0/0 = R7 f0/0
+        cnfg = configs\R1.recovered.cfg
+        x = -209.0
+        y = 59.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 1760
+        console = 2102
+        aux = 2502
+        wic0/0 = WIC-1ENET
+        wic0/1 = WIC-1ENET
+        e0/0 = R6 e0/0
+        f0/0 = R4 f0/0
+        cnfg = configs\R2.recovered.cfg
+        x = -234.0
+        y = -254.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = C:\Users\stari\AppData\Local\Temp
+    udp = 10101
+    [[1760]]
+        image = C:\Users\stari\Downloads\c1700-sy-mz.122-15.T17.image
+        ram = 256
+        ghostios = True
+        chassis = 1760
+    [[ROUTER R4]]
+        model = 1760
+        console = 2104
+        aux = 2504
+        wic0/0 = WIC-1ENET
+        wic0/1 = WIC-1ENET
+        e0/1 = R3 e0/1
+        f0/0 = R2 f0/0
+        cnfg = configs\R4.recovered.cfg
+        x = -439.0
+        y = -207.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 1760
+        console = 2103
+        aux = 2503
+        wic0/0 = WIC-1ENET
+        wic0/1 = WIC-1ENET
+        e0/1 = R4 e0/1
+        f0/0 = R5 f0/0
+        cnfg = configs\R3.recovered.cfg
+        x = -557.0
+        y = -90.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "f0/0"
+        x = -51.9839464657
+        y = -11.8668517196
+        interface = R8 f0/0
+    [[NOTE 2]]
+        text = "f0/0"
+        x = -43.6515479231
+        y = -25.6334725019
+        interface = R7 f0/0
+    [[NOTE 3]]
+        text = "e0/0"
+        x = -20.5122866529
+        y = -45.6368786559
+        interface = R6 e0/0
+    [[NOTE 4]]
+        text = "e0/1"
+        x = 8.77912670067
+        y = 47.8331477648
+        interface = R6 e0/1
+    [[NOTE 5]]
+        text = "f0/0"
+        x = 72.9839464657
+        y = 20.8668517196
+        interface = R6 f0/0
+    [[NOTE 6]]
+        text = "f0/0"
+        x = -50.1313365251
+        y = -2.41237470817
+        interface = R5 f0/0
+    [[NOTE 7]]
+        text = "e0/0"
+        x = 78.6281466338
+        y = 3.38586961381
+        interface = R5 e0/0
+    [[NOTE 8]]
+        text = "e0/1"
+        x = 4.59562731983
+        y = 50.1636576575
+        interface = R4 e0/1
+    [[NOTE 9]]
+        text = "f0/0"
+        x = 71.9884298534
+        y = 13.0611892531
+        interface = R4 f0/0
+    [[NOTE 10]]
+        text = "e0/1"
+        x = 64.4043726802
+        y = -5.16365765745
+        interface = R3 e0/1
+    [[NOTE 11]]
+        text = "f0/0"
+        x = 34.1313365251
+        y = 56.4123747082
+        interface = R3 f0/0
+    [[NOTE 12]]
+        text = "f0/0"
+        x = -53.9884298534
+        y = 0.938810746872
+        interface = R2 f0/0
+    [[NOTE 13]]
+        text = "e0/0"
+        x = 73.5122866529
+        y = 23.6368786559
+        interface = R2 e0/0
+    [[NOTE 14]]
+        text = "e0/0"
+        x = -41.6281466338
+        y = -30.3858696138
+        interface = R1 e0/0
+    [[NOTE 15]]
+        text = "e0/1"
+        x = 61.2208732993
+        y = -22.8331477648
+        interface = R1 e0/1
+    [[NOTE 16]]
+        text = "f0/0"
+        x = 1.65154792308
+        y = 44.6334725019
+        interface = R1 f0/0

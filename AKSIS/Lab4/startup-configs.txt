@@ -1,0 +1,490 @@
+Using 1074 out of 29688 bytes
+!
+version 12.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+logging queue-limit 100
+!
+memory-size iomem 15
+ip subnet-zero
+no ip icmp rate-limit unreachable
+!
+!
+ip tcp synwait-time 5
+no ip domain lookup
+!
+ipv6 unicast-routing
+!
+!
+!
+!
+interface Tunnel0
+ no ip address
+ no ip redirects
+ ipv6 address 2002:2915:FA42:1::2/16
+ tunnel source FastEthernet0/0
+ tunnel mode ipv6ip 6to4
+!
+interface Ethernet0/0
+ no ip address
+ half-duplex
+ ipv6 address FD56:865D:2134:1::1/64
+ ipv6 nd dad attempts 2
+!
+interface FastEthernet0/0
+ ip address 41.21.250.66 255.255.255.224
+ speed auto
+!
+interface Ethernet1/0
+ no ip address
+ half-duplex
+ ipv6 address FD56:865D:2134:2::1/64
+!
+ip classless
+no ip http server
+!
+!
+!
+ipv6 route 2001:67C:57C:1::/64 2002:2915:FA41:1::1
+ipv6 route ::/0 Ethernet0/0 FE80::D204:41FF:FE10:1000
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+no scheduler allocate
+end
+-----------------------------------------------------------------------------
+Using 838 out of 29688 bytes
+!
+version 12.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R2
+!
+logging queue-limit 100
+!
+memory-size iomem 15
+ip subnet-zero
+no ip icmp rate-limit unreachable
+!
+!
+ip tcp synwait-time 5
+no ip domain lookup
+!
+ipv6 unicast-routing
+!
+!
+!
+!
+interface Ethernet0/0
+ no ip address
+ half-duplex
+ ipv6 address FD56:865D:2134:6::1/64
+!
+interface FastEthernet0/0
+ no ip address
+ speed auto
+ ipv6 address FD56:865D:2134:5::2/64
+!
+interface Ethernet1/0
+ no ip address
+ shutdown
+ half-duplex
+!
+ip classless
+no ip http server
+!
+!
+!
+ipv6 route ::/0 Ethernet0/0 FE80::D205:41FF:FE10:1000
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+no scheduler allocate
+end
+----------------------------------------------------------------------------
+Using 838 out of 29688 bytes
+!
+version 12.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R3
+!
+logging queue-limit 100
+!
+memory-size iomem 15
+ip subnet-zero
+no ip icmp rate-limit unreachable
+!
+!
+ip tcp synwait-time 5
+no ip domain lookup
+!
+ipv6 unicast-routing
+!
+!
+!
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+ half-duplex
+!
+interface FastEthernet0/0
+ no ip address
+ speed auto
+ ipv6 address FD56:865D:2134:3::2/64
+!
+interface Ethernet1/0
+ no ip address
+ half-duplex
+ ipv6 address FD56:865D:2134:4::1/64
+!
+ip classless
+no ip http server
+!
+!
+!
+ipv6 route ::/0 Ethernet1/0 FE80::D203:1FFF:FE90:2000
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+no scheduler allocate
+end
+----------------------------------------------------------------------------
+Using 911 out of 29688 bytes
+!
+version 12.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R4
+!
+logging queue-limit 100
+!
+memory-size iomem 15
+ip subnet-zero
+no ip icmp rate-limit unreachable
+!
+!
+ip tcp synwait-time 5
+no ip domain lookup
+!
+ipv6 unicast-routing
+!
+!
+!
+!
+interface Loopback0
+ no ip address
+ ipv6 address 2001:67C:57C:2::1/64
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+ half-duplex
+!
+interface FastEthernet0/0
+ no ip address
+ speed auto
+ ipv6 address FD56:865D:2134:5::1/64
+!
+interface Ethernet1/0
+ no ip address
+ half-duplex
+ ipv6 address FD56:865D:2134:4::2/64
+!
+ip classless
+no ip http server
+!
+!
+!
+ipv6 route ::/0 FastEthernet0/0 FE80::D201:4AFF:FE3C:0
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+no scheduler allocate
+end
+---------------------------------------------------------------------------
+Using 839 out of 29688 bytes
+!
+version 12.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R5
+!
+logging queue-limit 100
+!
+memory-size iomem 15
+ip subnet-zero
+no ip icmp rate-limit unreachable
+!
+!
+ip tcp synwait-time 5
+no ip domain lookup
+!
+ipv6 unicast-routing
+!
+!
+!
+!
+interface Ethernet0/0
+ no ip address
+ half-duplex
+ ipv6 address FD56:865D:2134:1::2/64
+!
+interface FastEthernet0/0
+ no ip address
+ speed auto
+ ipv6 address FD56:865D:2134:3::1/64
+!
+interface Ethernet1/0
+ no ip address
+ shutdown
+ half-duplex
+!
+ip classless
+no ip http server
+!
+!
+!
+ipv6 route ::/0 FastEthernet0/0 FE80::D202:1FFF:FE90:0
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+no scheduler allocate
+end
+----------------------------------------------------------------
+Using 865 out of 29688 bytes
+!
+version 12.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R6
+!
+logging queue-limit 100
+!
+memory-size iomem 15
+ip subnet-zero
+no ip icmp rate-limit unreachable
+!
+!
+ip tcp synwait-time 5
+no ip domain lookup
+!
+ipv6 unicast-routing
+!
+!
+!
+!
+interface Ethernet0/0
+ no ip address
+ half-duplex
+ ipv6 address FD56:865D:2134:6::2/64
+!
+interface FastEthernet0/0
+ no ip address
+ speed auto
+ ipv6 address FD56:865D:2134:7::1/64
+!
+interface Ethernet1/0
+ no ip address
+ half-duplex
+ ipv6 address FD56:865D:2134:2::2/64
+!
+ip classless
+no ip http server
+!
+!
+!
+ipv6 route ::/0 Ethernet1/0 FE80::D200:4AFF:FE3C:2000
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+no scheduler allocate
+end
+-------------------------------------------------------------------------
+Using 875 out of 29688 bytes
+!
+version 12.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R7
+!
+logging queue-limit 100
+!
+memory-size iomem 15
+ip subnet-zero
+no ip icmp rate-limit unreachable
+!
+!
+ip tcp synwait-time 5
+no ip domain lookup
+!
+ipv6 unicast-routing
+!
+!
+!
+!
+interface Loopback0
+ no ip address
+ ipv6 address 2001:67C:57C:1::1/64
+!
+interface Tunnel0
+ no ip address
+ no ip redirects
+ ipv6 address 2002:2915:FA41:1::1/16
+ tunnel source FastEthernet0/0
+ tunnel mode ipv6ip 6to4
+!
+interface FastEthernet0/0
+ ip address 41.21.250.65 255.255.255.224
+ speed auto
+!
+ip classless
+no ip http server
+!
+!
+!
+ipv6 route ::/0 2002:2915:FA42:1::2
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+no scheduler allocate
+end
+--------------------------------------------------------
+Using 688 out of 29688 bytes
+!
+version 12.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R8
+!
+logging queue-limit 100
+!
+memory-size iomem 15
+ip subnet-zero
+no ip icmp rate-limit unreachable
+!
+!
+ip tcp synwait-time 5
+no ip domain lookup
+!
+ipv6 unicast-routing
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ speed auto
+ ipv6 address FD56:865D:2134:7::2/64
+!
+ip classless
+no ip http server
+!
+!
+!
+ipv6 route ::/0 FastEthernet0/0 FE80::D205:41FF:FE10:0
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+no scheduler allocate
+end
+----------------------------------------------------------
